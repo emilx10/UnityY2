@@ -15,7 +15,7 @@ NavMeshProjectSettings:
     cost: 2
   - name: Lava
     cost: 3
-  - name: 
+  - name: SkinnyObstacle
     cost: 1
   - name: 
     cost: 1
@@ -42,7 +42,7 @@ NavMeshProjectSettings:
   - name: 
     cost: 1
   - name: 
-    cost: 1
+    cost: 0
   - name: 
     cost: 1
   - name: 
