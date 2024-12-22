@@ -8,6 +8,7 @@ public class PlatformScripts : MonoBehaviour
     public NavMeshSurface navMeshSurface;
     private NavMeshModifier navMeshModifier;
     public float delayInSeconds = 3f;
+    public float bakeInterval = 1f;
 
     void Start()
     {
@@ -16,6 +17,8 @@ public class PlatformScripts : MonoBehaviour
         SetPlatformVisibility(false);
 
         StartCoroutine(LoopPlatformVisibility());
+
+        StartCoroutine(BakeNavMeshPeriodically());
     }
 
     private IEnumerator LoopPlatformVisibility()
@@ -49,5 +52,14 @@ public class PlatformScripts : MonoBehaviour
     {
         platform.SetActive(visible);
         navMeshModifier.enabled = visible;
+    }
+
+    private IEnumerator BakeNavMeshPeriodically()
+    {
+        while (true)
+        {
+            navMeshSurface.BuildNavMesh();
+            yield return new WaitForSeconds(bakeInterval);
+        }
     }
 }
