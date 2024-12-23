@@ -1658,6 +1658,7 @@ GameObject:
   - component: {fileID: 841825259}
   - component: {fileID: 841825258}
   - component: {fileID: 841825256}
+  - component: {fileID: 841825260}
   m_Layer: 0
   m_Name: Barrel
   m_TagString: Untagged
@@ -1713,6 +1714,26 @@ Transform:
   - {fileID: 1032074011}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &841825260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841825255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 1
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &923074012
 GameObject:
   m_ObjectHideFlags: 0
@@ -2945,6 +2966,7 @@ MonoBehaviour:
   platform: {fileID: 1086188469}
   navMeshSurface: {fileID: 1869899740}
   delayInSeconds: 3
+  bakeInterval: 1
 --- !u!1 &1995136847
 GameObject:
   m_ObjectHideFlags: 0
