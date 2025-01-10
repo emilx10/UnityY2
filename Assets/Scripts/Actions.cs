@@ -2,7 +2,8 @@ using UnityEngine;
 using System;
 using UnityEngine.Events;
 
-public static class UnityActions
+public class UnityActions: MonoBehaviour
 {
-    public static UnityAction testAction;
+    public static Action coinPickUp;
+    public static UnityAction<PlayerHealthManager> PlayerHealth;
 }
