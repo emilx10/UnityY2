@@ -4,19 +4,25 @@ using UnityEngine.UI;
 
 public class PlayerHealthManager : MonoBehaviour
 {
+    public UnityEvent onHealthChanged;
     public Text textHealth;
     public int health = 100;
 
-    private void Start()
+    void Start()
     {
-        textHealth.text = health.ToString();
+        if (onHealthChanged == null)
+        {
+            onHealthChanged = new UnityEvent();
+        }
+
+        UnityAction updateHealthTextAction = UpdateHealthText;
+        onHealthChanged.AddListener(updateHealthTextAction);
+
+        UpdateHealthText();
     }
 
-    public void TakeDmg()
+    public void UpdateHealthText()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-
-        }
+        textHealth.text = health.ToString();
     }
 }
