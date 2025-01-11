@@ -5,11 +5,12 @@ using UnityEngine.Events;
 
 public class Coin : MonoBehaviour
 {
-    public UnityAction OnCoinPickUp;
+    public UnityAction<int> OnCoinPickUp;
+    [SerializeField] private int _pointValue;
 
     private void OnTriggerEnter(Collider other)
     {
-        OnCoinPickUp?.Invoke();
+        OnCoinPickUp?.Invoke(_pointValue);
         Destroy(gameObject);
     }
 }
