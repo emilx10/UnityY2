@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class CoinManager : MonoBehaviour
 {
-    [SerializeField] Coin[] coins;
+    [SerializeField] Coin[] coins; // Any amount of coins can be added
     public UnityAction<int> OnCoinPickedUp; //This is The manager's action, different from the coin's one
 
     private void Start()
