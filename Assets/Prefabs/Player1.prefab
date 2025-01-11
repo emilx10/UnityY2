@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4131076258358181710}
   - component: {fileID: 7391225849137848590}
   - component: {fileID: 5043423140871669278}
+  - component: {fileID: -1080660831717958188}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Untagged
@@ -149,3 +150,15 @@ MonoBehaviour:
   AreaCost: 1
   agent: {fileID: 7391225849137848590}
   textPopup: {fileID: 0}
+--- !u!114 &-1080660831717958188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4378573770687004537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 485ddff09283dd249831835c0f7df8d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

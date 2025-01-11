@@ -4,7 +4,7 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 public class ScoreText : MonoBehaviour
 {
-    [SerializeField] CoinManager coinManager;
+    [SerializeField] CoinManager coinManager; // The thing that handles the coins and the times they are picked up
     [SerializeField] private Text scoreText;
     
     private int score;
