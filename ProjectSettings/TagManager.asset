@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Coin
   - Laser
+  - Checkpoint
+  - player
   layers:
   - Default
   - TransparentFX
