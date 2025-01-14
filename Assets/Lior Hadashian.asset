@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Lior Hadashian
   m_EditorClassIdentifier: 
   prefabs:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 858162739541964990, guid: 67709bf2a5ff34749aee78e4fad84333, type: 3}
+  - {fileID: 4378573770687004537, guid: 1e7f8ac6340c5e444980e18cdc7876ea, type: 3}
+  - {fileID: 5108593584690050296, guid: c64937db3088ac74c9719f717a456956, type: 3}
