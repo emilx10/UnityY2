@@ -249,37 +249,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 76653914}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &114152631
+--- !u!1 &114152631 stripped
 GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 6856865130553736784, guid: 94c616a509941d049b8bb1153ee4be9d, type: 3}
+  m_PrefabInstance: {fileID: 7908421815862404031}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 114152632}
-  m_Layer: 0
-  m_Name: BarrelPoint2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &114152632
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 114152631}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.9, y: 13.88, z: -19.43}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 979810305}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &251145487
 GameObject:
   m_ObjectHideFlags: 0
@@ -1764,39 +1738,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &979810304
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 979810305}
-  m_Layer: 0
-  m_Name: BarrelPoints
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &979810305
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 979810304}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.033084, y: -13.317851, z: 56.681335}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1777826115}
-  - {fileID: 114152632}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &990275870
 GameObject:
   m_ObjectHideFlags: 0
@@ -2945,37 +2886,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealthScript: {fileID: 1549490640}
   healthText: {fileID: 1777247565}
---- !u!1 &1777826114
+--- !u!1 &1777826114 stripped
 GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 5077123156722659693, guid: 94c616a509941d049b8bb1153ee4be9d, type: 3}
+  m_PrefabInstance: {fileID: 7908421815862404031}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1777826115}
-  m_Layer: 0
-  m_Name: BarrelPoint1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1777826115
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1777826114}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.34, y: 13.88, z: -19.43}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 979810305}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1802917479
 GameObject:
   m_ObjectHideFlags: 0
@@ -3506,11 +3421,27 @@ PrefabInstance:
       value: Barrel
       objectReference: {fileID: 0}
     - target: {fileID: 5950391750822967231, guid: eed7e00741d3d614ea606e4b3bbf70fd, type: 3}
+      propertyPath: barrelStats
+      value: 
+      objectReference: {fileID: 11400000, guid: f95dfd89b9df082479abd3335a28366d, type: 2}
+    - target: {fileID: 5950391750822967231, guid: eed7e00741d3d614ea606e4b3bbf70fd, type: 3}
+      propertyPath: obstaclesPoints.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950391750822967231, guid: eed7e00741d3d614ea606e4b3bbf70fd, type: 3}
       propertyPath: 'ObstaclesPoints.Array.data[0]'
       value: 
       objectReference: {fileID: 1777826114}
     - target: {fileID: 5950391750822967231, guid: eed7e00741d3d614ea606e4b3bbf70fd, type: 3}
       propertyPath: 'ObstaclesPoints.Array.data[1]'
+      value: 
+      objectReference: {fileID: 114152631}
+    - target: {fileID: 5950391750822967231, guid: eed7e00741d3d614ea606e4b3bbf70fd, type: 3}
+      propertyPath: 'obstaclesPoints.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1777826114}
+    - target: {fileID: 5950391750822967231, guid: eed7e00741d3d614ea606e4b3bbf70fd, type: 3}
+      propertyPath: 'obstaclesPoints.Array.data[1]'
       value: 
       objectReference: {fileID: 114152631}
     m_RemovedComponents: []
@@ -3739,6 +3670,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48c7e381edf3be44e987aa2c2965774c, type: 3}
+--- !u!1001 &7908421815862404031
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5220016027378653697, guid: 94c616a509941d049b8bb1153ee4be9d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.033084
+      objectReference: {fileID: 0}
+    - target: {fileID: 5220016027378653697, guid: 94c616a509941d049b8bb1153ee4be9d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -13.317851
+      objectReference: {fileID: 0}
+    - target: {fileID: 5220016027378653697, guid: 94c616a509941d049b8bb1153ee4be9d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 56.681335
+      objectReference: {fileID: 0}
+    - target: {fileID: 5220016027378653697, guid: 94c616a509941d049b8bb1153ee4be9d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5220016027378653697, guid: 94c616a509941d049b8bb1153ee4be9d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5220016027378653697, guid: 94c616a509941d049b8bb1153ee4be9d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5220016027378653697, guid: 94c616a509941d049b8bb1153ee4be9d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5220016027378653697, guid: 94c616a509941d049b8bb1153ee4be9d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5220016027378653697, guid: 94c616a509941d049b8bb1153ee4be9d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5220016027378653697, guid: 94c616a509941d049b8bb1153ee4be9d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7923029957331354133, guid: 94c616a509941d049b8bb1153ee4be9d, type: 3}
+      propertyPath: m_Name
+      value: BarrelPoints
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 94c616a509941d049b8bb1153ee4be9d, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3756,7 +3744,7 @@ SceneRoots:
   - {fileID: 4078315766157894138}
   - {fileID: 7674910868194643210}
   - {fileID: 1957390949550664039}
-  - {fileID: 979810305}
+  - {fileID: 7908421815862404031}
   - {fileID: 1648823754}
   - {fileID: 810041630}
   - {fileID: 1287907272}
