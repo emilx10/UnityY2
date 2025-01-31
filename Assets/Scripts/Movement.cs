@@ -10,6 +10,8 @@ public class Movement : MonoBehaviour
     public int AreaCost;
     public NavMeshAgent agent;
     public Text textPopup;
+    
+    
     void Start()
     {
         agent.SetAreaCost(NavMesh.GetAreaFromName("SkinnyObstacle"), AreaCost);
