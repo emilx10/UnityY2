@@ -10,6 +10,8 @@ public class PlayerHealthScript : MonoBehaviour
     
     private int health;
 
+    public Animator anim;
+
     private void Start()
     {
         health = 100;
@@ -25,6 +27,7 @@ public class PlayerHealthScript : MonoBehaviour
     private void TakeDamage(int damage) // General damage function, calls for the HPChange UnityAction
     {
         health -= damage;
+        anim.SetTrigger("Hit");
         OnHPChange?.Invoke(health);
     }
 }

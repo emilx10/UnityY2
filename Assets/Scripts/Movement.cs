@@ -1,4 +1,5 @@
-﻿using Unity.AI.Navigation;
+﻿using System;
+using Unity.AI.Navigation;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
@@ -21,7 +22,7 @@ public class Movement : MonoBehaviour
         agent.SetAreaCost(NavMesh.GetAreaFromName("SkinnyObstacle"), AreaCost);
         textPopup.gameObject.SetActive(false);
         animator = GetComponent<Animator>();
-
+        agent.destination = EndGoal.position;
         agent.isStopped = true;
         animator.SetFloat("Speed", 0);
     }
@@ -47,9 +48,12 @@ public class Movement : MonoBehaviour
             animator.SetFloat("Speed", speed);
         }
 
-        if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
+        if(!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
         {
             textPopup.gameObject.SetActive(true);
+
+            animator.SetLayerWeight(1, 1f);
+            animator.SetBool("RaiseHands", true);
         }
     }
 }
