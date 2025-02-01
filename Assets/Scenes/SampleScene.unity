@@ -3258,8 +3258,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20739894a7c00c246a8d4c496120a668, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinManager: {fileID: 447751992}
-  scoreText: {fileID: 1966984621}
 --- !u!1 &1995136847
 GameObject:
   m_ObjectHideFlags: 0
@@ -3471,7 +3469,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2376121933816242971, guid: 1e7f8ac6340c5e444980e18cdc7876ea, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.585
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 2376121933816242971, guid: 1e7f8ac6340c5e444980e18cdc7876ea, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3504,6 +3502,24 @@ PrefabInstance:
     - target: {fileID: 2376121933816242971, guid: 1e7f8ac6340c5e444980e18cdc7876ea, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2650640266496337860, guid: 1e7f8ac6340c5e444980e18cdc7876ea, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: d9fe89786785092488ad8d780071375b, type: 3}
+    - target: {fileID: 2650640266496337860, guid: 1e7f8ac6340c5e444980e18cdc7876ea, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 3e77eab2786125741bc0435825e4dabd, type: 2}
+    - target: {fileID: 2650640266496337860, guid: 1e7f8ac6340c5e444980e18cdc7876ea, type: 3}
+      propertyPath: m_WarningMessage
+      value: "\nBinding warning: Some generic clip(s) animate transforms that are
+        already bound by a Humanoid avatar. These transforms can only be changed
+        by Humanoid clips.\n\tTransform 'mixamorig:Hips'\n\tTransform 'mixamorig:LeftFoot'\n\tTransform
+        'mixamorig:LeftHandIndex1'\n\tTransform 'mixamorig:LeftHandPinky2'\n\tTransform
+        'mixamorig:RightHandRing2'\n\tTransform 'mixamorig:Spine1'\n\tTransform 'mixamorig:LeftToeBase'\n\tTransform
+        'mixamorig:RightArm'\n\tTransform 'mixamorig:LeftLeg'\n\tTransform 'mixamorig:LeftShoulder'\n\tand
+        more ...\n\tFrom animation clip 'Walking'"
       objectReference: {fileID: 0}
     - target: {fileID: 4378573770687004537, guid: 1e7f8ac6340c5e444980e18cdc7876ea, type: 3}
       propertyPath: m_Name
