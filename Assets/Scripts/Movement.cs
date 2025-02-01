@@ -1,4 +1,4 @@
-using Unity.AI.Navigation;
+﻿using Unity.AI.Navigation;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
@@ -13,7 +13,7 @@ public class Movement : MonoBehaviour
     public Animator animator;
 
     private float idleTimer = 0f;
-    private float idleDuration = 2f; 
+    private float idleDuration = 2f;
     private bool canMove = false;
 
     void Start()
