@@ -2445,7 +2445,7 @@ MonoBehaviour:
   onLaserHit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1549490647}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Player1Controller, Assembly-CSharp
         m_MethodName: SlowPlayer
         m_Mode: 1
@@ -2460,7 +2460,7 @@ MonoBehaviour:
   onLaserHitText:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1549490647}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Player1Slow, Assembly-CSharp
         m_MethodName: LogMessage
         m_Mode: 5
@@ -2600,7 +2600,54 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 485ddff09283dd249831835c0f7df8d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1549490647
+--- !u!95 &1549490648 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2650640266496337860, guid: 1e7f8ac6340c5e444980e18cdc7876ea, type: 3}
+  m_PrefabInstance: {fileID: 4078315766157894138}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1549490654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311592989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b964d60caf17ff48b5ec198f36c2166, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onLaserHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1549490655}
+        m_TargetAssemblyTypeName: Player1Slow, Assembly-CSharp
+        m_MethodName: SlowPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onLaserHitText:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1549490655}
+        m_TargetAssemblyTypeName: Player1Slow, Assembly-CSharp
+        m_MethodName: LogMessage
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Player 1 Slowed!
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1549490655
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3258,8 +3305,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20739894a7c00c246a8d4c496120a668, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinManager: {fileID: 447751992}
-  scoreText: {fileID: 1966984621}
 --- !u!1 &1995136847
 GameObject:
   m_ObjectHideFlags: 0
@@ -3471,7 +3516,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2376121933816242971, guid: 1e7f8ac6340c5e444980e18cdc7876ea, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.02
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 2376121933816242971, guid: 1e7f8ac6340c5e444980e18cdc7876ea, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3508,11 +3553,15 @@ PrefabInstance:
     - target: {fileID: 2650640266496337860, guid: 1e7f8ac6340c5e444980e18cdc7876ea, type: 3}
       propertyPath: m_Avatar
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 9000000, guid: d9fe89786785092488ad8d780071375b, type: 3}
     - target: {fileID: 2650640266496337860, guid: 1e7f8ac6340c5e444980e18cdc7876ea, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 74f62d5d26997014297412aa6a60e81b, type: 2}
+      objectReference: {fileID: 9100000, guid: 3e77eab2786125741bc0435825e4dabd, type: 2}
+    - target: {fileID: 2650640266496337860, guid: 1e7f8ac6340c5e444980e18cdc7876ea, type: 3}
+      propertyPath: m_WarningMessage
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4378573770687004537, guid: 1e7f8ac6340c5e444980e18cdc7876ea, type: 3}
       propertyPath: m_Name
       value: Player1
@@ -3526,12 +3575,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1802917480}
     - target: {fileID: 5043423140871669278, guid: 1e7f8ac6340c5e444980e18cdc7876ea, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1549490648}
+    - target: {fileID: 5043423140871669278, guid: 1e7f8ac6340c5e444980e18cdc7876ea, type: 3}
       propertyPath: textPopup
       value: 
       objectReference: {fileID: 990275872}
     - target: {fileID: 7391225849137848590, guid: 1e7f8ac6340c5e444980e18cdc7876ea, type: 3}
-      propertyPath: m_Enabled
-      value: 1
+      propertyPath: m_AgentTypeID
+      value: 658490984
       objectReference: {fileID: 0}
     - target: {fileID: 9116947494070233793, guid: 1e7f8ac6340c5e444980e18cdc7876ea, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -3543,7 +3596,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4378573770687004537, guid: 1e7f8ac6340c5e444980e18cdc7876ea, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1549490647}
+      addedObject: {fileID: 1549490655}
+    - targetCorrespondingSourceObject: {fileID: 4378573770687004537, guid: 1e7f8ac6340c5e444980e18cdc7876ea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1549490654}
   m_SourcePrefab: {fileID: 100100000, guid: 1e7f8ac6340c5e444980e18cdc7876ea, type: 3}
 --- !u!1001 &7674910868194643210
 PrefabInstance:
