@@ -43,7 +43,6 @@ GameObject:
   - component: {fileID: 2376121933816242971}
   - component: {fileID: 9116947494070233793}
   - component: {fileID: 4131076258358181710}
-  - component: {fileID: 7391225849137848590}
   - component: {fileID: 5043423140871669278}
   - component: {fileID: -1080660831717958188}
   - component: {fileID: 2650640266496337860}
@@ -136,28 +135,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!195 &7391225849137848590
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4378573770687004537}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0.5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!114 &5043423140871669278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,8 +150,9 @@ MonoBehaviour:
   EndGoal: {fileID: 0}
   surface: {fileID: 0}
   AreaCost: 1
-  agent: {fileID: 7391225849137848590}
+  agent: {fileID: 0}
   textPopup: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!114 &-1080660831717958188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,6 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 485ddff09283dd249831835c0f7df8d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
 --- !u!95 &2650640266496337860
 Animator:
   serializedVersion: 7
