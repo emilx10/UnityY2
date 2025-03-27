@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31bbc135b5983f1449eac3fc126c69e3, type: 3}
+  m_Name: Lior Hadashian
+  m_EditorClassIdentifier: 
+  prefabs:
+  - {fileID: 858162739541964990, guid: 67709bf2a5ff34749aee78e4fad84333, type: 3}
+  - {fileID: 8802747959393339902, guid: 48c7e381edf3be44e987aa2c2965774c, type: 3}
+  - {fileID: 3476681377151374099, guid: eed7e00741d3d614ea606e4b3bbf70fd, type: 3}
