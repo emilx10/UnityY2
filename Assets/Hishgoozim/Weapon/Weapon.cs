@@ -33,9 +33,9 @@ public class Weapon : MonoBehaviour
         {
             Debug.Log("Hit");
             Health targetHealthComponent = hitInfo.collider.GetComponent<Health>();
-            if (targetHealthComponent) targetHealthComponent.TakeDamage(weapon.Damage);
+            if (targetHealthComponent) targetHealthComponent.onDeath?.Invoke();
         }
-        
+
         Debug.DrawRay(tip.position, tip.forward, Color.red, 2f);
         
         Invoke(nameof(EnableCanShoot), weapon.FireRate);
