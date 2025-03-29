@@ -36,8 +36,6 @@ public class TopDownMovement : MonoBehaviour
 
         input.Player.Run.performed += _ => currentSpeed = runSpeed;
         input.Player.Run.canceled += _ => currentSpeed = walkSpeed;
-
-        input.Player.Shoot.performed += _ => Shoot();
     }
 
     void Update()
@@ -48,8 +46,6 @@ public class TopDownMovement : MonoBehaviour
 
     void Move()
     {
-        if (moveVector == Vector2.zero) return;
-        
         Vector3 move = new Vector3(moveVector.x, 0, moveVector.y);
         move = transform.right * move.x + transform.forward * move.z;
         
@@ -72,8 +68,25 @@ public class TopDownMovement : MonoBehaviour
         }
     }
 
-    void Shoot()
+    public float GetNormalizedSpeed()
     {
+        float velocity = controller.velocity.magnitude;
+        return velocity / runSpeed;
+    }
+
+    public float CalculateDirection()
+    {
+        Vector3 movement = controller.velocity;
         
+        if (movement == Vector3.zero) return 0f; // No movement
+
+        // Project movement onto the character's plane
+        Vector3 flattenedMovement = Vector3.ProjectOnPlane(movement, Vector3.up);
+        Vector3 forward = transform.forward;
+        
+        // Calculate angle between forward direction and movement direction
+        float angle = Vector3.SignedAngle(forward, flattenedMovement, Vector3.up);
+        
+        return angle;
     }
 }
