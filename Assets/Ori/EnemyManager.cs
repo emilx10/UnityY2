@@ -49,36 +49,24 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other, Collision collision)
+    public void ChasePlayer()
     {
-        if (other.gameObject.CompareTag("player"))
-        {
-            if (collision.collider == playerDetectionCollider)
-            {
-                NavMeshAgent.destination = Player.transform.position;
-            }
-
-            if (collision.collider == playerShootDetectionCollider)
-            {
-                shouldShoot = true;
-            }
-        }
+        NavMeshAgent.destination = Player.transform.position;
     }
 
-    private void OnTriggerExit(Collider other, Collision collision)
+    public void StopChasePlayer()
     {
-        if (other.gameObject.CompareTag("player"))
-        {
-            if (collision.collider == playerDetectionCollider)
-            {
-                NavMeshAgent.destination = Waypoints[waypointIndex].position;
-            }
+        NavMeshAgent.destination = Waypoints[waypointIndex].position;
+    }
 
-            if (collision.collider == playerShootDetectionCollider)
-            {
-                shouldShoot = false;
-            }
-        }
+    public void ShouldShootPlayer()
+    {
+        shouldShoot = true;
+    }
+    
+    public void ShouldNotShootPlayer()
+    {
+        shouldShoot = false;
     }
 
     private IEnumerator ShootingCooldown(float cooldown)
