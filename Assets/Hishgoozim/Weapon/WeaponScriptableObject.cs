@@ -5,6 +5,5 @@ public class WeaponScriptableObject : ScriptableObject
 {
     public float FireRate;
     public float Range;
-    public float Damage;
     public int Ammo;
 }
