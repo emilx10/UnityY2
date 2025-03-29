@@ -42,7 +42,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2376121933816242971}
   - component: {fileID: 9116947494070233793}
-  - component: {fileID: 4131076258358181710}
   - component: {fileID: 5043423140871669278}
   - component: {fileID: -1080660831717958188}
   - component: {fileID: 2650640266496337860}
@@ -114,27 +113,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4131076258358181710
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4378573770687004537}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5043423140871669278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,12 +125,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feee7ed8ba50a234f930dc3201d5cb6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EndGoal: {fileID: 0}
-  surface: {fileID: 0}
-  AreaCost: 1
-  agent: {fileID: 0}
-  textPopup: {fileID: 0}
-  animator: {fileID: 0}
+  walkSpeed: 5
+  runSpeed: 10
+  rotationSpeed: 15
+  cameraHeight: 10
+  cameraAngle: 90
 --- !u!114 &-1080660831717958188
 MonoBehaviour:
   m_ObjectHideFlags: 0

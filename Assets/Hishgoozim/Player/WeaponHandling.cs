@@ -3,12 +3,12 @@ using UnityEngine;
 public class WeaponHandling : MonoBehaviour
 {
     [SerializeField] private Transform gripPoint;
-    
+    [SerializeField] private Animator shootAnim;
+
     private Weapon currentCloseWeapon;
     private Weapon currentWeapon;
     
     private InputMaster input;
-
     private void OnEnable()
     {
         input.Enable();
@@ -26,7 +26,12 @@ public class WeaponHandling : MonoBehaviour
         input.Player.Equip.performed += _ => Equip();
         input.Player.Shoot.performed += _ =>
         {
-            if (currentWeapon) currentWeapon.Shoot();
+            if (currentWeapon)
+            {
+                shootAnim.SetTrigger("LeftMouseClick");
+                currentWeapon.Shoot();
+                //shootAnim.SetBool("LeftMouseClick", false);
+            }
         };
     }
 
