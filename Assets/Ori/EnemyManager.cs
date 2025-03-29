@@ -10,13 +10,10 @@ using UnityEngine.Serialization;
 public class EnemyManager : MonoBehaviour
 {
     [SerializeField] private List<Transform> Waypoints;
-    [SerializeField] private NavMeshSurface NavMeshSurface;
     [SerializeField] private GameObject Player;
     [SerializeField] private NavMeshAgent NavMeshAgent;
     [SerializeField] private Weapon EnemyWeapon;
     [SerializeField] private float ShootCooldownInSeconds;
-    [SerializeField] private SphereCollider playerDetectionCollider;
-    [SerializeField] private SphereCollider playerShootDetectionCollider;
     
     private int waypointIndex = 0;
     private bool isShooting;
