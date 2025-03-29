@@ -1,37 +1,50 @@
-using System;
+using System.Collections;
 using UnityEngine;
 
 public class ObstaclesMovement : MonoBehaviour
 {
-    [SerializeField] private GameObject[] obstaclesPoints; 
-    [SerializeField] private BarrelScriptableObject barrelStats; 
-    [SerializeField] private float speed = 5f; 
+    public float speed = 10f;
+    public Vector3 targetPosition; // End point for the arrow to travel to
+    public float destroyDelay = 1f; // Delay before arrow destroys itself after reaching its destination
 
-    private bool isDestPoint1 = true; // Flag to check if the object is moving towards point 1 or point 2
+    private bool isActivated = false; // A flag to check if the arrow is activated
 
-    void Update()
+    // This function will be called from the trigger zone to activate the arrow
+    public void ActivateArrow()
     {
-        // If the object is moving towards the first point
-        if (isDestPoint1)
+        if (!isActivated)
         {
-            // If the object reaches the first point, change the destination to the second point
-            if (Vector3.Distance(transform.position, obstaclesPoints[0].transform.position) < 1f)
-                isDestPoint1 = false;
-            else
-                // Move the object towards the first point
-                transform.position = new Vector3(
-                    transform.position.x - (barrelStats.BarrelSpeedMod * speed * Time.deltaTime), transform.position.y, transform.position.z);
+            StartCoroutine(MoveArrow());
+            isActivated = true;
         }
-        else
-        {
-            // If the object reaches the second point, destroy it
-            if (Vector3.Distance(transform.position, obstaclesPoints[0].transform.position) < 1f)
-            {
-                Destroy(gameObject); 
-                return; // Exit the update loop to stop any further movement after destruction
-            }
+    }
 
-           
+    private IEnumerator MoveArrow()
+    {
+        float journeyLength = Vector3.Distance(transform.position, targetPosition);
+        float startTime = Time.time;
+
+        // Move arrow toward target position
+        while (Vector3.Distance(transform.position, targetPosition) > 0.1f)
+        {
+            float distanceCovered = (Time.time - startTime) * speed;
+            float fractionOfJourney = distanceCovered / journeyLength;
+            transform.position = Vector3.Lerp(transform.position, targetPosition, fractionOfJourney);
+
+            yield return null;
+        }
+
+        // Destroy the arrow after reaching the destination or delay
+        Destroy(gameObject, destroyDelay);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("player"))
+        {
+            Debug.Log("Dead BOI");
+            other.gameObject.GetComponentInChildren<Animator>().SetTrigger("dead");
+            Destroy(gameObject);
         }
     }
 }

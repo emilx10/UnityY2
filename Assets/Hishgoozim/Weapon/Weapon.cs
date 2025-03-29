@@ -21,7 +21,7 @@ public class Weapon : MonoBehaviour
         if (!canShoot || ammo <= 0) return;
         
         canShoot = false;
-        
+        //Invoke(nameof(Shoot), 0.25f);
         GameObject bullet = Instantiate(bulletPrefab, tip.position, quaternion.identity);
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         rb.AddForce(tip.forward * speed);
