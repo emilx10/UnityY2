@@ -41,6 +41,13 @@ public class Weapon : MonoBehaviour
         Invoke(nameof(EnableCanShoot), weapon.FireRate);
     }
 
+    public float GetRange()
+    {
+        Debug.Log(weapon==null);
+        Debug.Log(weapon.Range);
+        return weapon.Range;
+    }
+
     void EnableCanShoot()
     {
         canShoot = true;
