@@ -34,7 +34,7 @@ public class EnemyManager : MonoBehaviour
     {
         if (!isShooting && IsPlayerInRange)
         {
-            Debug.Log("Ani Ayef");
+            
             StartCoroutine(ShootingCooldown(ShootCooldownInSeconds));
             EnemyWeapon.Shoot();
         }
