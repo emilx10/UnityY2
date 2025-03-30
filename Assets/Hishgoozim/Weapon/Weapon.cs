@@ -11,6 +11,7 @@ public class Weapon : MonoBehaviour
     private int ammo;
     private bool canShoot = true;
 
+    [SerializeField] private GameObject deathScreen;
     private void Awake()
     {
         ammo = weapon.Ammo;
@@ -34,6 +35,10 @@ public class Weapon : MonoBehaviour
             Debug.Log("Hit");
             Health targetHealthComponent = hitInfo.collider.GetComponent<Health>();
             if (targetHealthComponent) targetHealthComponent.onDeath?.Invoke();
+            if (hitInfo.collider.CompareTag("player") && deathScreen != null)
+            {
+                deathScreen.SetActive(true);
+            }
         }
 
         Debug.DrawRay(tip.position, tip.forward, Color.red, 2f);

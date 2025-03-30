@@ -8,6 +8,8 @@ public class ProgressManager : MonoBehaviour
    public PlayerProgress progress;
 
    private string savePath;
+   [SerializeField] private int maxLevel = 10;
+   public int Maxlevels => maxLevel;
 
    private void Awake()
    {
@@ -24,6 +26,26 @@ public class ProgressManager : MonoBehaviour
       {
          Destroy(gameObject);
       }
+   }
+
+   public void CompleteLevel(int levelIndex, float completionTime)
+   {
+      if (levelIndex < 0 || levelIndex >= progress.levels.Count)
+      {
+         return;
+      }
+      var level = progress.levels[levelIndex];
+
+      if (level.bestTime == 0f || completionTime < level.bestTime)
+      {
+         level.bestTime = completionTime;
+      }
+
+      if (levelIndex + 1 < progress.levels.Count)
+      {
+         progress.levels[levelIndex + 1].isUnlocked = true;
+      }
+      SaveProgress();
    }
 
    public void LoadProgress()
@@ -47,9 +69,9 @@ public class ProgressManager : MonoBehaviour
 
    private void InitializeProgress()
    {
-      int MaxLevel = 10;
+   
       progress = new PlayerProgress();
-      for (int i = 0; i < MaxLevel; i++)
+      for (int i = 0; i < maxLevel; i++)
       {
          progress.levels.Add((new LevelProgress
          {

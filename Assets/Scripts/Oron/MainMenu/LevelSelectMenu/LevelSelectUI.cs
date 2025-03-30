@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class LevelSelectUI : MonoBehaviour
 {
@@ -19,8 +20,9 @@ public class LevelSelectUI : MonoBehaviour
    void GenerateButtons()
    {
       var progress = ProgressManager.instance.progress;
+      int totalLevels = ProgressManager.instance.Maxlevels;
 
-      for (int i = 0; i < progress.levels.Count; i++)
+      for (int i = 0; i < totalLevels; i++)
       {
          int levelIndex = i;
          bool isUnlocked = progress.levels[i].isUnlocked;
@@ -32,7 +34,7 @@ public class LevelSelectUI : MonoBehaviour
          RawImage thumbnail = buttonObject.transform.Find("Thumbnail").GetComponent<RawImage>();
          Image overlay = buttonObject.transform.Find("Overlay").GetComponent<Image>();
          RawImage lockIcon = buttonObject.transform.Find("LockIcon").GetComponent<RawImage>();
-         Text levelText = buttonObject.transform.Find("LevelText").GetComponent<Text>();
+         TextMeshProUGUI levelText = buttonObject.transform.Find("LevelText").GetComponent<TextMeshProUGUI>();
          
          // setting the level text :)
          levelText.text = "Level " + (i + 1);
@@ -48,10 +50,12 @@ public class LevelSelectUI : MonoBehaviour
             overlay.gameObject.SetActive(false);
             lockIcon.gameObject.SetActive(false);
             btn.interactable = true;
-            
+            Debug.Log($"Level {levelIndex +1 } isUnlocked: {isUnlocked}");
+
+            string sceneName = "Level" + (levelIndex + 1);
             btn.onClick.AddListener(() =>
             {
-               StartCoroutine(LoadLevelAsync(levelIndex));
+               StartCoroutine(LoadLevelAsync(sceneName));
             });
          }
          else
@@ -62,9 +66,8 @@ public class LevelSelectUI : MonoBehaviour
          }
       }
 
-      IEnumerator LoadLevelAsync(int levelIndex)
+      IEnumerator LoadLevelAsync(string sceneName)
       {
-         string sceneName= "Level" + (levelIndex + 1);
          AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
          while (!asyncLoad.isDone)
          {
