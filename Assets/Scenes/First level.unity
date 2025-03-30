@@ -394,9 +394,21 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -191673296729646367, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 766175576}
+    - target: {fileID: -191673296729646367, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 6467880011216895419, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
+    - target: {fileID: -191673296729646367, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
+      propertyPath: EnemyWeapon
+      value: 
+      objectReference: {fileID: 2026058073}
+    - target: {fileID: -191673296729646367, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
+      propertyPath: NavMeshAgent
+      value: 
+      objectReference: {fileID: 1075732030}
     - target: {fileID: -191673296729646367, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
       propertyPath: navMeshAgent
       value: 
@@ -406,9 +418,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 505824333}
     - target: {fileID: -191673296729646367, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
+      propertyPath: Waypoints.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -191673296729646367, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
       propertyPath: waypoints.Array.size
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: -191673296729646367, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
+      propertyPath: ShootCooldownInSeconds
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -191673296729646367, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
+      propertyPath: 'Waypoints.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1762963244}
+    - target: {fileID: -191673296729646367, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
+      propertyPath: 'Waypoints.Array.data[1]'
+      value: 
+      objectReference: {fileID: 562535487}
+    - target: {fileID: -191673296729646367, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
+      propertyPath: 'Waypoints.Array.data[2]'
+      value: 
+      objectReference: {fileID: 741542785}
     - target: {fileID: -191673296729646367, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
       propertyPath: 'waypoints.Array.data[0]'
       value: 
@@ -425,6 +457,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5441438636796503727, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
+      propertyPath: shootAnim
+      value: 
+      objectReference: {fileID: 1168219256}
     - target: {fileID: 6467880011216895419, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
       propertyPath: m_Name
       value: Enemy1
@@ -3744,6 +3780,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.4082723, y: 2.1717372, z: 0.63196933}
   m_Center: {x: -0.012832698, y: 1.0864702, z: -0.11193056}
+--- !u!1 &766175576 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6467880011216895419, guid: 28e44e03ff1846f4f976e0d2b3cbc96d, type: 3}
+  m_PrefabInstance: {fileID: 634592846}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &766338382 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 9c33f225c6ee98243a57390a7235bd50, type: 3}
@@ -4965,6 +5006,11 @@ CapsuleCollider:
   m_Height: 2.3708458
   m_Direction: 1
   m_Center: {x: 0, y: 0.6854235, z: 0}
+--- !u!95 &1168219256 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9003792350356231073, guid: 28e44e03ff1846f4f976e0d2b3cbc96d, type: 3}
+  m_PrefabInstance: {fileID: 634592846}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1226145298
 GameObject:
   m_ObjectHideFlags: 0
@@ -5119,6 +5165,11 @@ PrefabInstance:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8062262853808187197, guid: a860894bd5cb43f40bf74bc4f6799877, type: 3}
   m_PrefabInstance: {fileID: 1658040201}
+  m_PrefabAsset: {fileID: 0}
+--- !u!195 &1263715995 stripped
+NavMeshAgent:
+  m_CorrespondingSourceObject: {fileID: 6878774547021155182, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
+  m_PrefabInstance: {fileID: 1856418824}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1266048374
 GameObject:
@@ -7168,6 +7219,18 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -191673296729646367, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 766175576}
+    - target: {fileID: -191673296729646367, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
+      propertyPath: EnemyWeapon
+      value: 
+      objectReference: {fileID: 2026058073}
+    - target: {fileID: -191673296729646367, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
+      propertyPath: NavMeshAgent
+      value: 
+      objectReference: {fileID: 1263715995}
     - target: {fileID: 4544043773940038206, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -7887,6 +7950,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 19081054}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2026058073 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8398103730217330067, guid: 2dab4e377d7e39c47818e0b02eb64332, type: 3}
+  m_PrefabInstance: {fileID: 876106837}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b2fbd5395b92d4f846aa8ed6a4231e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2036592211 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6467880011216895419, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}

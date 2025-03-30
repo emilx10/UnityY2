@@ -10,32 +10,41 @@ using UnityEngine.Serialization;
 public class EnemyManager : MonoBehaviour
 {
     [SerializeField] private List<Transform> Waypoints;
+    [SerializeField] private NavMeshSurface NavMeshSurface;
     [SerializeField] private GameObject Player;
     [SerializeField] private NavMeshAgent NavMeshAgent;
     [SerializeField] private Weapon EnemyWeapon;
     [SerializeField] private float ShootCooldownInSeconds;
-    
+    [SerializeField] private SphereCollider playerDetectionCollider;
+    [SerializeField] private SphereCollider playerShootDetectionCollider;
+
     private int waypointIndex = 0;
     private bool isShooting;
-    private bool IsPlayerInRange;
-    
+    private bool shouldShoot;
+
+
     void Start()
     {
         if (Waypoints != null)
             NavMeshAgent.destination = Waypoints[waypointIndex].position;
         NavMeshAgent.autoBraking = false;
-        
+
         isShooting = false;
-        IsPlayerInRange = false;
+        shouldShoot = false;
+
     }
 
-    
+
     void Update()
     {
-        if (!isShooting && IsPlayerInRange)
+        if (!isShooting && shouldShoot)
         {
-            Debug.Log("Ani Ayef");
+
+
+
+
             StartCoroutine(ShootingCooldown(ShootCooldownInSeconds));
+
             EnemyWeapon.Shoot();
         }
         else if (Waypoints != null && !NavMeshAgent.pathPending && NavMeshAgent.remainingDistance < 0.5f)
@@ -45,32 +54,44 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
-    public void ChasePlayer()
+    private void OnTriggerEnter(Collider other, Collision collision)
     {
-        NavMeshAgent.destination = Player.transform.position;
+        if (other.gameObject.CompareTag("player"))
+        {
+            if (collision.collider == playerDetectionCollider)
+            {
+                NavMeshAgent.destination = Player.transform.position;
+            }
+
+            if (collision.collider == playerShootDetectionCollider)
+            {
+                shouldShoot = true;
+            }
+        }
     }
 
-    public void StopChasePlayer()
+    private void OnTriggerExit(Collider other, Collision collision)
     {
-        NavMeshAgent.destination = Waypoints[waypointIndex].position;
-    }
+        if (other.gameObject.CompareTag("player"))
+        {
+            if (collision.collider == playerDetectionCollider)
+            {
+                NavMeshAgent.destination = Waypoints[waypointIndex].position;
+            }
 
-    public void ShouldShootPlayer()
-    {
-        IsPlayerInRange = true;
-    }
-    
-    public void ShouldNotShootPlayer()
-    {
-        IsPlayerInRange = false;
+            if (collision.collider == playerShootDetectionCollider)
+            {
+                shouldShoot = false;
+            }
+        }
     }
 
     private IEnumerator ShootingCooldown(float cooldown)
     {
         isShooting = true;
-        NavMeshAgent.isStopped = true;
+        NavMeshAgent.Stop();
         yield return new WaitForSeconds(cooldown);
-        NavMeshAgent.isStopped = true;
+        NavMeshAgent.Resume();
         isShooting = false;
     }
 }
