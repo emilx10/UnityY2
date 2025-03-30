@@ -21,7 +21,7 @@ public class Weapon : MonoBehaviour
         if (!canShoot || ammo <= 0) return;
         
         canShoot = false;
-        //Invoke(nameof(Shoot), 0.25f);
+        
         GameObject bullet = Instantiate(bulletPrefab, tip.position, quaternion.identity);
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         rb.AddForce(tip.forward * speed);
@@ -31,7 +31,7 @@ public class Weapon : MonoBehaviour
         bool hit = Physics.Raycast(tip.position, tip.forward, out RaycastHit hitInfo, weapon.Range);
         if (hit)
         {
-            Debug.Log("Hit");
+            Debug.Log($"Hit {hitInfo.collider.name}");
             Health targetHealthComponent = hitInfo.collider.GetComponent<Health>();
             if (targetHealthComponent) targetHealthComponent.onDeath?.Invoke();
         }

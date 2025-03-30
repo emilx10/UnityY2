@@ -143,6 +143,7 @@ GameObject:
   - component: {fileID: 5441438636796503727}
   - component: {fileID: 8658024691187815544}
   - component: {fileID: -191673296729646367}
+  - component: {fileID: 2840210529655770057}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -219,7 +220,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4728318009759307538}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: dead
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &-191673296729646367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,6 +250,29 @@ MonoBehaviour:
   NavMeshAgent: {fileID: 0}
   EnemyWeapon: {fileID: 0}
   ShootCooldownInSeconds: 0
+--- !u!136 &2840210529655770057
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6467880011216895419}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Height: 4
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.96, z: 0}
 --- !u!1 &7087237369639084522
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,35 +472,13 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6502182839619065283, guid: bf95540c10b3b1b43a12c7a8c730ea6f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 443240111472488183}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bf95540c10b3b1b43a12c7a8c730ea6f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1788121151593825851}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf95540c10b3b1b43a12c7a8c730ea6f, type: 3}
 --- !u!4 &1692914725118332264 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: bf95540c10b3b1b43a12c7a8c730ea6f, type: 3}
   m_PrefabInstance: {fileID: 1221822969425799811}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2032707095958427602 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: bf95540c10b3b1b43a12c7a8c730ea6f, type: 3}
-  m_PrefabInstance: {fileID: 1221822969425799811}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1788121151593825851
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2032707095958427602}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5cd4709e89821b44b968351256fa91e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 4728318009759307538}
-  topDownMovement: {fileID: 0}
 --- !u!95 &4728318009759307538 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: bf95540c10b3b1b43a12c7a8c730ea6f, type: 3}
