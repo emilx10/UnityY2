@@ -1,18 +1,35 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
+using UnityEngine.Audio;
 
 public class SettingsMenuUI : MonoBehaviour
 {
     public TMP_Dropdown resolutionDropdown;
     public Toggle fullscreenToggle;
+    
+    public Slider masterVolumeSlider;
+    public Slider musicVolumeSlider;
+    public Slider sfxVolumeSlider;
+    
+    public AudioMixer audioMixer;
+    
     private Resolution[] resolutions;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         SetupResolutions();
         fullscreenToggle.isOn = Screen.fullScreen;
+        
+        audioMixer.GetFloat("MasterVolume", out float master);
+        audioMixer.GetFloat("MusicVolume", out float music);
+        audioMixer.GetFloat("SFXVolume", out float sfx);
+
+        masterVolumeSlider.value = Mathf.Pow(10, master / 20f);
+        musicVolumeSlider.value = Mathf.Pow(10, music / 20f);
+        sfxVolumeSlider.value = Mathf.Pow(10, sfx / 20f);
     }
 
      void SetupResolutions()
@@ -47,6 +64,16 @@ public class SettingsMenuUI : MonoBehaviour
         Resolution selectedResolution = resolutions[resolutionDropdown.value];
         Screen.SetResolution(selectedResolution.width, selectedResolution.height, fullscreenToggle.isOn);
         Debug.Log($"Resolution set to: {selectedResolution.width}x{selectedResolution.height}");
+        
+        SetVolume("MasterVolume", masterVolumeSlider.value);
+        SetVolume("MusicVolume", musicVolumeSlider.value);
+        SetVolume("SFXVolume", sfxVolumeSlider.value);
+    }
+
+    void SetVolume(string exposedParamater, float value)
+    {
+        float volume = Mathf.Log10(Mathf.Clamp(value, 0.001f, 1f)) * 20f;
+        audioMixer.SetFloat(exposedParamater, volume);
     }
     
 }
