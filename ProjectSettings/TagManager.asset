@@ -8,6 +8,10 @@ TagManager:
   - Laser
   - Checkpoint
   - player
+  - Weapon
+  - Enemy
+  - BulletIgnore
+  - Bullet
   layers:
   - Default
   - TransparentFX

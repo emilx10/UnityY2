@@ -14,6 +14,7 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] private NavMeshAgent NavMeshAgent;
     [SerializeField] private Weapon EnemyWeapon;
     [SerializeField] private float ShootCooldownInSeconds;
+    [SerializeField] private Health healthManager;
     
     private int waypointIndex = 0;
     private bool isShooting;
@@ -38,7 +39,7 @@ public class EnemyManager : MonoBehaviour
             StartCoroutine(ShootingCooldown(ShootCooldownInSeconds));
             EnemyWeapon.Shoot();
         }
-        else if (Waypoints != null && !NavMeshAgent.pathPending && NavMeshAgent.remainingDistance < 0.5f)
+        else if (Waypoints.Count > 0 && !NavMeshAgent.pathPending && NavMeshAgent.remainingDistance < 0.5f)
         {
             waypointIndex = (waypointIndex + 1) % Waypoints.Count;
             NavMeshAgent.destination = Waypoints[waypointIndex].position;
@@ -52,7 +53,14 @@ public class EnemyManager : MonoBehaviour
 
     public void StopChasePlayer()
     {
-        NavMeshAgent.destination = Waypoints[waypointIndex].position;
+        if (Waypoints.Count == 0)
+        {
+            NavMeshAgent.destination = transform.position;
+        }
+        else
+        {
+            NavMeshAgent.destination = Waypoints[waypointIndex].position;
+        }
     }
 
     public void ShouldShootPlayer()
@@ -63,6 +71,14 @@ public class EnemyManager : MonoBehaviour
     public void ShouldNotShootPlayer()
     {
         IsPlayerInRange = false;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Bullet"))
+        {
+            healthManager.onDeath?.Invoke();
+        }
     }
 
     private IEnumerator ShootingCooldown(float cooldown)

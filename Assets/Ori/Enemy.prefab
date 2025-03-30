@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 4909932370354774794}
   m_Layer: 0
   m_Name: PlayerChaseDetector
-  m_TagString: Untagged
+  m_TagString: BulletIgnore
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 2840210529655770057}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -250,6 +250,7 @@ MonoBehaviour:
   NavMeshAgent: {fileID: 0}
   EnemyWeapon: {fileID: 0}
   ShootCooldownInSeconds: 0
+  healthManager: {fileID: 8658024691187815544}
 --- !u!136 &2840210529655770057
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -286,7 +287,7 @@ GameObject:
   - component: {fileID: 2347423719449234452}
   m_Layer: 0
   m_Name: PlayerShootDetector
-  m_TagString: Untagged
+  m_TagString: BulletIgnore
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

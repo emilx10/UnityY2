@@ -32,7 +32,6 @@ public class Weapon : MonoBehaviour
         bool hit = Physics.Raycast(tip.position, tip.forward, out RaycastHit hitInfo, weapon.Range);
         if (hit)
         {
-            Debug.Log($"Hit {hitInfo.collider.name}");
             Health targetHealthComponent = hitInfo.collider.GetComponent<Health>();
             if (targetHealthComponent) targetHealthComponent.onDeath?.Invoke();
             if (hitInfo.collider.CompareTag("player") && deathScreen != null)
@@ -45,7 +44,7 @@ public class Weapon : MonoBehaviour
         
         Invoke(nameof(EnableCanShoot), weapon.FireRate);
 
-        Destroy(bullet,3);
+        //Destroy(bullet,3);
     }
 
     void EnableCanShoot()
