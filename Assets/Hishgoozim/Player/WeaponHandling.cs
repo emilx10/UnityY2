@@ -29,10 +29,15 @@ public class WeaponHandling : MonoBehaviour
             if (currentWeapon)
             {
                 shootAnim.SetTrigger("LeftMouseClick");
-                currentWeapon.Shoot();
+                Invoke(nameof(Shoot), 0.3f);
                 //shootAnim.SetBool("LeftMouseClick", false);
             }
         };
+    }
+
+    void Shoot()
+    {
+        currentWeapon.Shoot();
     }
 
     void Equip()
