@@ -60,5 +60,10 @@ public class Weapon : MonoBehaviour
         canShoot = true;
     }
 
+    public int GetAmmo()
+    {
+        return ammo;
+    }
+
 
 }

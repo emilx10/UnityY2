@@ -20,6 +20,7 @@ public class SettingsMenuUI : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        LoadVolumeSettings();
         SetupResolutions();
         fullscreenToggle.isOn = Screen.fullScreen;
         
@@ -68,6 +69,22 @@ public class SettingsMenuUI : MonoBehaviour
         SetVolume("MasterVolume", masterVolumeSlider.value);
         SetVolume("MusicVolume", musicVolumeSlider.value);
         SetVolume("SFXVolume", sfxVolumeSlider.value);
+        SaveVolumeSettings();
+    }
+
+    private void SaveVolumeSettings()
+    {
+        PlayerPrefs.SetFloat("MasterVolume", masterVolumeSlider.value);
+        PlayerPrefs.SetFloat("MusicVolume", musicVolumeSlider.value);
+        PlayerPrefs.SetFloat("SFXVolume", sfxVolumeSlider.value);
+        PlayerPrefs.Save();
+    }
+
+    private void LoadVolumeSettings()
+    {
+        masterVolumeSlider.value = PlayerPrefs.GetFloat("MasterVolume", 1f);
+        musicVolumeSlider.value  = PlayerPrefs.GetFloat("MusicVolume", 1f);
+        sfxVolumeSlider.value    = PlayerPrefs.GetFloat("SFXVolume", 1f);
     }
 
     void SetVolume(string exposedParamater, float value)
