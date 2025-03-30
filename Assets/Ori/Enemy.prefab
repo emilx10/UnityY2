@@ -32,6 +32,37 @@ Transform:
   - {fileID: 3034873812833027609}
   m_Father: {fileID: 5388747529685516096}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &3809496055716677340
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4825424546112622542}
+  m_Layer: 0
+  m_Name: AimPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4825424546112622542
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3809496055716677340}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.023, y: 2.785, z: 0.206}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9200352947711681553}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5816760613984704849
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,6 +166,7 @@ Transform:
   - {fileID: 1692914725118332264}
   - {fileID: 6585209234796743440}
   - {fileID: 232375222675524439}
+  - {fileID: 4825424546112622542}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!195 &6878774547021155182
@@ -201,13 +233,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Waypoints: []
-  NavMeshSurface: {fileID: 0}
   Player: {fileID: 0}
   NavMeshAgent: {fileID: 0}
   EnemyWeapon: {fileID: 0}
   ShootCooldownInSeconds: 0
-  playerDetectionCollider: {fileID: 0}
-  playerShootDetectionCollider: {fileID: 0}
 --- !u!1 &7087237369639084522
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,7 +289,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 3
+  m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2347423719449234452
 MonoBehaviour:
@@ -327,6 +356,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8398103730217330067, guid: 2dab4e377d7e39c47818e0b02eb64332, type: 3}
+      propertyPath: tip
+      value: 
+      objectReference: {fileID: 4825424546112622542}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

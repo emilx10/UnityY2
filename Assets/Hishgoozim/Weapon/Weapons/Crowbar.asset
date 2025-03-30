@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Crowbar
   m_EditorClassIdentifier: 
   FireRate: 1.44
-  Range: 200
+  Range: 4000
   Ammo: 47
