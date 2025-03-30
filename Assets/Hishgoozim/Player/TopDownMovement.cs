@@ -47,7 +47,7 @@ public class TopDownMovement : MonoBehaviour
     void Move()
     {
         Vector3 move = new Vector3(moveVector.x, 0, moveVector.y);
-        move = transform.right * move.x + transform.forward * move.z;
+        //move = transform.right * move.x + transform.forward * move.z;
         
         controller.Move(move * (currentSpeed * Time.deltaTime));
     }
