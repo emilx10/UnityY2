@@ -43,13 +43,6 @@ public class Weapon : MonoBehaviour
         Destroy(bullet,3);
     }
 
-    public float GetRange()
-    {
-        Debug.Log(weapon==null);
-        Debug.Log(weapon.Range);
-        return weapon.Range;
-    }
-
     void EnableCanShoot()
     {
         canShoot = true;

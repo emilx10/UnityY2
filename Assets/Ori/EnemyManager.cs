@@ -17,8 +17,7 @@ public class EnemyManager : MonoBehaviour
     
     private int waypointIndex = 0;
     private bool isShooting;
-    private bool shouldShoot;
-    private IEnumerator shootConroutine;
+    private bool IsPlayerInRange;
     
     void Start()
     {
@@ -27,16 +26,16 @@ public class EnemyManager : MonoBehaviour
         NavMeshAgent.autoBraking = false;
         
         isShooting = false;
-        shouldShoot = false;
-        shootConroutine = ShootingCooldown(ShootCooldownInSeconds);
+        IsPlayerInRange = false;
     }
 
     
     void Update()
     {
-        if (!isShooting && shouldShoot)
+        if (!isShooting && IsPlayerInRange)
         {
-            StartCoroutine(shootConroutine);
+            Debug.Log("Ani Ayef");
+            StartCoroutine(ShootingCooldown(ShootCooldownInSeconds));
             EnemyWeapon.Shoot();
         }
         else if (Waypoints != null && !NavMeshAgent.pathPending && NavMeshAgent.remainingDistance < 0.5f)
@@ -58,20 +57,20 @@ public class EnemyManager : MonoBehaviour
 
     public void ShouldShootPlayer()
     {
-        shouldShoot = true;
+        IsPlayerInRange = true;
     }
     
     public void ShouldNotShootPlayer()
     {
-        shouldShoot = false;
+        IsPlayerInRange = false;
     }
 
     private IEnumerator ShootingCooldown(float cooldown)
     {
         isShooting = true;
-        NavMeshAgent.Stop();
+        NavMeshAgent.isStopped = true;
         yield return new WaitForSeconds(cooldown);
-        NavMeshAgent.Resume();
+        NavMeshAgent.isStopped = true;
         isShooting = false;
     }
 }
