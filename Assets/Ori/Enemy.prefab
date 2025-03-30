@@ -57,7 +57,7 @@ Transform:
   m_GameObject: {fileID: 3809496055716677340}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.023, y: 2.785, z: 0.206}
+  m_LocalPosition: {x: -0.023, y: 2.785, z: 7.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 9200352947711681553}
   - component: {fileID: 6878774547021155182}
   - component: {fileID: 5441438636796503727}
-  - component: {fileID: 8658024691187815544}
+  - component: {fileID: 3170617823102610548}
   - component: {fileID: -191673296729646367}
   - component: {fileID: 2840210529655770057}
   m_Layer: 0
@@ -206,7 +206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gripPoint: {fileID: 443240111472488183}
   shootAnim: {fileID: 0}
---- !u!114 &8658024691187815544
+--- !u!114 &3170617823102610548
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -215,24 +215,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6467880011216895419}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9488abac39a87a546bf23448c4a8adb9, type: 3}
+  m_Script: {fileID: 11500000, guid: af558553ee9368a47b8a81db2a095e76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onDeath:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4728318009759307538}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: SetTrigger
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: dead
-          m_BoolArgument: 0
-        m_CallState: 2
+  anim: {fileID: 4728318009759307538}
+  enemy: {fileID: 6467880011216895419}
 --- !u!114 &-191673296729646367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,7 +237,7 @@ MonoBehaviour:
   NavMeshAgent: {fileID: 0}
   EnemyWeapon: {fileID: 0}
   ShootCooldownInSeconds: 0
-  healthManager: {fileID: 8658024691187815544}
+  healthManager: {fileID: 0}
 --- !u!136 &2840210529655770057
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -393,10 +380,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6708040758048734537, guid: 2dab4e377d7e39c47818e0b02eb64332, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6708040758048734537, guid: 2dab4e377d7e39c47818e0b02eb64332, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.82
+      objectReference: {fileID: 0}
     - target: {fileID: 8398103730217330067, guid: 2dab4e377d7e39c47818e0b02eb64332, type: 3}
       propertyPath: tip
       value: 
       objectReference: {fileID: 4825424546112622542}
+    - target: {fileID: 8398103730217330067, guid: 2dab4e377d7e39c47818e0b02eb64332, type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8398103730217330067, guid: 2dab4e377d7e39c47818e0b02eb64332, type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 11400000, guid: d46f500fcb54af04aa61a9cd4eb1f0ec, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

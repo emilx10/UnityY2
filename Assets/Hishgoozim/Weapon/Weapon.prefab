@@ -71,7 +71,7 @@ MonoBehaviour:
   weapon: {fileID: 0}
   bulletPrefab: {fileID: 4375073044431210159, guid: 11ad00a59aa992445a0d006090144ced, type: 3}
   tip: {fileID: 6708040758048734537}
-  speed: 0
+  speed: 500
   deathScreen: {fileID: 0}
 --- !u!1 &4423878227540866172
 GameObject:
