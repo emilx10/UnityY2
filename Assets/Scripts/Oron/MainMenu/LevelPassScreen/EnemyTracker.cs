@@ -25,46 +25,66 @@ public class EnemyTracker : MonoBehaviour
         }
     }
 
-    public void RegisterEnemy(GameObject enemy)
+    private void Start()
     {
-        if (!activeEnemies.Contains(enemy))
+        // Find all the enemy objects in the scene by tag, and add them to the activeEnemies list.
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        foreach (GameObject enemy in enemies)
         {
             activeEnemies.Add(enemy);
         }
     }
 
-    public void EnemyDied(GameObject enemy)
+    private void Update()
     {
-        if (activeEnemies.Contains(enemy))
+        // Check if all enemies are deactivated (SetActive(false))
+        bool allEnemiesDead = true;
+
+        foreach (GameObject enemy in activeEnemies)
         {
-            activeEnemies.Remove(enemy);
+            if (enemy.activeSelf) // If the enemy is still active, the player hasn't won yet
+            {
+                allEnemiesDead = false;
+                break;
+            }
         }
 
-        if (activeEnemies.Count == 0)
+        if (allEnemiesDead)
         {
-            Debug.Log("all enemies le dead, level le complete");
-            LevelTimer.Instance?.StopTimer();
-            int levelIndex = SceneManager.GetActiveScene().buildIndex - 1;
-            float currentTime = LevelTimer.Instance.currentTime;
-            
-            ProgressManager.instance?.CompleteLevel(levelIndex,currentTime);
+            HandleLevelCompletion();
+        }
+    }
 
-            if (timeText != null)
-            {
-                timeText.text = $"Time: {currentTime}";
-            }
+    private void HandleLevelCompletion()
+    {
+        // Stop the level timer
+        LevelTimer.Instance?.StopTimer();
 
-            if (bestTimeText != null)
-            {
-                float best = ProgressManager.instance.progress.levels[levelIndex].bestTime;
-                bestTimeText.text =$" Best Time: {FormatTime(best)}";
-            }
+        // Get the current level index and time
+        int levelIndex = SceneManager.GetActiveScene().buildIndex - 1;
+        float currentTime = LevelTimer.Instance.currentTime;
 
-            if (successScreen != null)
-            {
-                successScreen.SetActive(true);
-                Time.timeScale = 0f;
-            }
+        // Complete the level and save progress
+        ProgressManager.instance?.CompleteLevel(levelIndex, currentTime);
+
+        // Update the UI with the time and best time
+        if (timeText != null)
+        {
+            timeText.text = $"Time: {currentTime}";
+        }
+
+        if (bestTimeText != null)
+        {
+            float best = ProgressManager.instance.progress.levels[levelIndex].bestTime;
+            bestTimeText.text = $"Best Time: {FormatTime(best)}";
+        }
+
+        // Show the success screen and pause the game
+        if (successScreen != null)
+        {
+            successScreen.SetActive(true);
+            Time.timeScale = 0f; // Pause the game
         }
     }
 
@@ -76,4 +96,3 @@ public class EnemyTracker : MonoBehaviour
         return $"{minutes:00}:{seconds:00}.{milliseconds:00}";
     }
 }
-
