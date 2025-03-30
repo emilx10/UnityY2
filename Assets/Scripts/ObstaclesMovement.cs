@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ObstaclesMovement : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class ObstaclesMovement : MonoBehaviour
     public float destroyDelay = 1f; // Delay before arrow destroys itself after reaching its destination
 
     private bool isActivated = false; // A flag to check if the arrow is activated
+    public GameObject deathScreen;
 
     // This function will be called from the trigger zone to activate the arrow
     public void ActivateArrow()
@@ -44,6 +46,13 @@ public class ObstaclesMovement : MonoBehaviour
         {
             Debug.Log("Dead BOI");
             other.gameObject.GetComponentInChildren<Animator>().SetTrigger("dead");
+            if (deathScreen != null)
+            {
+                int buildIndex = SceneManager.GetActiveScene().buildIndex;
+                int levelIndex = buildIndex - 1;
+                deathScreen.SetActive(true);
+                deathScreen.GetComponent<DeathScreenUI>().Show(levelIndex);
+            }
             Destroy(gameObject);
         }
     }
