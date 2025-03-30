@@ -389,6 +389,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 19081054}
     m_Modifications:
+    - target: {fileID: -7258057325102415653, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -191673296729646367, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
       propertyPath: player
       value: 
@@ -417,6 +421,10 @@ PrefabInstance:
       propertyPath: 'waypoints.Array.data[2]'
       value: 
       objectReference: {fileID: 741542785}
+    - target: {fileID: 4544043773940038206, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6467880011216895419, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
       propertyPath: m_Name
       value: Enemy1
@@ -1138,6 +1146,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7258057325102415653, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4544043773940038206, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6467880011216895419, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
       propertyPath: m_Name
       value: EnemyNotMoving3
@@ -1618,6 +1634,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 19081054}
     m_Modifications:
+    - target: {fileID: -7258057325102415653, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -191673296729646367, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
       propertyPath: player
       value: 
@@ -1650,6 +1670,10 @@ PrefabInstance:
       propertyPath: 'waypoints.Array.data[3]'
       value: 
       objectReference: {fileID: 498935348}
+    - target: {fileID: 4544043773940038206, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6467880011216895419, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
       propertyPath: m_Name
       value: Enemy6
@@ -2508,6 +2532,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 19081054}
     m_Modifications:
+    - target: {fileID: -7258057325102415653, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -191673296729646367, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
       propertyPath: player
       value: 
@@ -2540,6 +2568,10 @@ PrefabInstance:
       propertyPath: 'waypoints.Array.data[3]'
       value: 
       objectReference: {fileID: 214907967}
+    - target: {fileID: 4544043773940038206, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6467880011216895419, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
       propertyPath: m_Name
       value: Enemy4
@@ -2902,6 +2934,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 19081054}
     m_Modifications:
+    - target: {fileID: -7258057325102415653, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -191673296729646367, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
       propertyPath: player
       value: 
@@ -2934,6 +2970,10 @@ PrefabInstance:
       propertyPath: 'waypoints.Array.data[3]'
       value: 
       objectReference: {fileID: 1122225617}
+    - target: {fileID: 4544043773940038206, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6467880011216895419, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
       propertyPath: m_Name
       value: Enemy2
@@ -3509,6 +3549,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 19081054}
     m_Modifications:
+    - target: {fileID: -7258057325102415653, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -191673296729646367, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
       propertyPath: player
       value: 
@@ -3541,6 +3585,10 @@ PrefabInstance:
       propertyPath: 'waypoints.Array.data[3]'
       value: 
       objectReference: {fileID: 1316586630}
+    - target: {fileID: 4544043773940038206, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6467880011216895419, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
       propertyPath: m_Name
       value: Enemy9
@@ -3835,6 +3883,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 19081054}
     m_Modifications:
+    - target: {fileID: -7258057325102415653, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -191673296729646367, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
       propertyPath: player
       value: 
@@ -3867,6 +3919,10 @@ PrefabInstance:
       propertyPath: 'waypoints.Array.data[3]'
       value: 
       objectReference: {fileID: 1459726513}
+    - target: {fileID: 4544043773940038206, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6467880011216895419, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
       propertyPath: m_Name
       value: Enemy3
@@ -5794,6 +5850,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7258057325102415653, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4544043773940038206, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6467880011216895419, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
       propertyPath: m_Name
       value: EnemyNotMoving2
@@ -6492,6 +6556,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 19081054}
     m_Modifications:
+    - target: {fileID: -7258057325102415653, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -191673296729646367, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
       propertyPath: player
       value: 
@@ -6524,6 +6592,10 @@ PrefabInstance:
       propertyPath: 'waypoints.Array.data[3]'
       value: 
       objectReference: {fileID: 949398805}
+    - target: {fileID: 4544043773940038206, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6467880011216895419, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
       propertyPath: m_Name
       value: Enemy8
@@ -7490,6 +7562,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 19081054}
     m_Modifications:
+    - target: {fileID: -7258057325102415653, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -191673296729646367, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
       propertyPath: player
       value: 
@@ -7522,6 +7598,10 @@ PrefabInstance:
       propertyPath: 'waypoints.Array.data[3]'
       value: 
       objectReference: {fileID: 2084357610}
+    - target: {fileID: 4544043773940038206, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6467880011216895419, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
       propertyPath: m_Name
       value: Enemy7
@@ -7628,6 +7708,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7258057325102415653, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4544043773940038206, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6467880011216895419, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
       propertyPath: m_Name
       value: EnemyNotMoving4
@@ -8941,6 +9029,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 19081054}
     m_Modifications:
+    - target: {fileID: -7258057325102415653, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -191673296729646367, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
       propertyPath: player
       value: 
@@ -8973,6 +9065,10 @@ PrefabInstance:
       propertyPath: 'waypoints.Array.data[3]'
       value: 
       objectReference: {fileID: 45671363}
+    - target: {fileID: 4544043773940038206, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6467880011216895419, guid: a0338da60b27dc24ab500d687aa0979f, type: 3}
       propertyPath: m_Name
       value: Enemy5
